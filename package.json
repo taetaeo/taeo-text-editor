@@ -1,0 +1,19 @@
+{
+  "name": "text-editor",
+  "version": "1.0.0",
+  "description": "text-editor",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "text",
+    "editor",
+    "draft.js",
+    "react.js"
+  ],
+  "scripts": {
+    "prepare": "sh ./scripts/prepare.sh",
+    "after": "sh ./scripts/after.sh"
+  }
+}

@@ -1,0 +1,6 @@
+.color-picker_wrapper {
+  padding: 8px;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
