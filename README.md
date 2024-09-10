@@ -225,7 +225,7 @@ export default TextEditor;
 
 - Apply to use data from Rich Text Editor on Canvas.
 
-<img src="https://github.com/user-attachments/assets/628f3b3e-030b-4cb1-acfc-d5a3f4d51e28"/>
+![example](https://github.com/user-attachments/assets/628f3b3e-030b-4cb1-acfc-d5a3f4d51e28)
 
 ## Description
 
