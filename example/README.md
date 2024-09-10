@@ -1,18 +1,6 @@
-# Text Editor Library
+# Text Editor Test in React + Vite.
 
-![Draft.js](https://img.shields.io/badge/Draft.js-v0.11.7-black?logo=Draft.js)
-![React.js](https://img.shields.io/badge/React.js-v18.2.0-61DAFB?logo=react&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-v5.2.2-007ACC?logo=typescript&logoColor=white)
-
-## Getting Started
-
-```bash
-# 설치 및 실행
-npm run start
-
-```
-
-## Example Code.
+## Test Code.
 
 ```tsx
 import type { CustomStyleMapType, UseEditorProps } from "text-editor";
@@ -221,27 +209,9 @@ function TextEditor(props: UseEditorProps) {
 export default TextEditor;
 ```
 
-## Rich Text Editor's data conversion
-
-- Apply to use data from Rich Text Editor on Canvas.
-
-<img src="https://github.com/taetaeo/taeo-text-editor/blob/master/docs/examp.mp4"/>
-
 ## Description
 
 - EditorContainer: Component responsible for the functionality of the text editor.
 - ToolbarContainer: Component responsible for the functionality of the toolbar.
 - useEditor: Hook responsible for the data logic of the editor.
 - style: Import the CSS file through the path text-editor/dist/css/text-editor.css.
-
-## Browser Support
-
-| ![IE / Edge](https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_32x32.png) <br /> IE / Edge | ![Firefox](https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_32x32.png) <br /> Firefox | ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_32x32.png) <br /> Chrome | ![Safari](https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_32x32.png) <br /> Safari | ![iOS Safari](https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari-ios/safari-ios_32x32.png) <br />iOS Safari | ![Chrome for Android](https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_32x32.png) <br/> Chrome for Android |
-| ------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| IE11, Edge [1, 2]                                                                                                   | last 2 versions                                                                                                       | last 2 versions                                                                                                   | last 2 versions                                                                                                   | not fully supported [3]                                                                                                          | not fully supported [3]                                                                                                                  |
-
-[1] May need a shim or a polyfill for some syntax used in Draft.js ([docs](https://draftjs.org/docs/advanced-topics-issues-and-pitfalls/#polyfills)).
-
-[2] IME inputs have known issues in these browsers, especially Korean ([docs](https://draftjs.org/docs/advanced-topics-issues-and-pitfalls/#ime-and-internet-explorer)).
-
-[3] There are known issues with mobile browsers, especially on Android ([docs](https://draftjs.org/docs/advanced-topics-issues-and-pitfalls/#mobile-not-yet-supported)).
