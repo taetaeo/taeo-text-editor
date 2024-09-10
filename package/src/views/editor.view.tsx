@@ -15,36 +15,39 @@ export interface EditorViewProps extends R.HTMLAttributes<HTMLElement> {
   placeholder?: string;
 }
 
-const EditorView = R.forwardRef<Editor, EditorViewProps>(function RTEditor(
-  {
-    editorState,
-    handleChange = () => {},
-    onFocus = () => {},
-    handleKeyCommand,
-    keyBindingFn,
-    blockStyleFn,
-    customStyleMap = {},
-    placeholder = "내용을 입력해주세요...",
-    style,
-    children,
-    className = "",
-    ...rest
-  },
-  forwardedRef
-) {
-  return (
-    <div className={cn("editor-container", className)} onClick={onFocus} style={style} {...rest}>
-      <Editor
-        ref={forwardedRef}
-        editorState={editorState}
-        onChange={handleChange}
-        handleKeyCommand={handleKeyCommand}
-        keyBindingFn={keyBindingFn}
-        blockStyleFn={blockStyleFn}
-        customStyleMap={customStyleMap}
-        placeholder={placeholder}
-      />
-    </div>
-  );
-});
+const EditorView = R.forwardRef<Editor, EditorViewProps>(
+  (
+    {
+      editorState,
+      handleChange = () => {},
+      onFocus = () => {},
+      handleKeyCommand,
+      keyBindingFn,
+      blockStyleFn,
+      customStyleMap = {},
+      placeholder = "내용을 입력해주세요...",
+      style,
+      children,
+      className = "",
+      ...rest
+    },
+
+    forwardedRef
+  ) => {
+    return (
+      <div className={cn("editor-container", className)} onClick={onFocus} style={style} {...rest}>
+        <Editor
+          ref={forwardedRef}
+          editorState={editorState}
+          onChange={handleChange}
+          handleKeyCommand={handleKeyCommand}
+          keyBindingFn={keyBindingFn}
+          blockStyleFn={blockStyleFn}
+          customStyleMap={customStyleMap}
+          placeholder={placeholder}
+        />
+      </div>
+    );
+  }
+);
 export default EditorView;

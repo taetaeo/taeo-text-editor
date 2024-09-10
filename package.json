@@ -14,6 +14,7 @@
   ],
   "scripts": {
     "prepare": "sh ./scripts/prepare.sh",
-    "after": "sh ./scripts/after.sh"
+    "after": "sh ./scripts/after.sh",
+    "start": "npm run prepare && npm run after"
   }
 }
