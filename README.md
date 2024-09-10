@@ -225,11 +225,7 @@ export default TextEditor;
 
 - Apply to use data from Rich Text Editor on Canvas.
 
-## 프로젝트 설명
-
 [![프로젝트 소개 영상](https://img.youtube.com/vi/영상ID/0.jpg)](https://github.com/user-attachments/assets/628f3b3e-030b-4cb1-acfc-d5a3f4d51e28)
-
-프로젝트를 소개하는 동영상입니다. 클릭해서 확인해 보세요.
 
 ## Description
 
