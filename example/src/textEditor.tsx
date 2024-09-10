@@ -1,5 +1,5 @@
 import type { CustomStyleMapType, UseEditorProps } from "text-editor";
-import { ToolbarView, EditorView, useEditor, styledMap, toolbarConfigs, ExtractObjectButton, useColorPicker, ColorPicker } from "text-editor";
+import { EditorView, useEditor, styledMap, toolbarConfigs, ExtractObjectButton, useColorPicker, ColorPicker } from "text-editor";
 import * as R from "react";
 
 import "text-editor/dist/css/text-editor.css";
@@ -34,80 +34,152 @@ function TextEditor(props: UseEditorProps) {
   };
 
   return (
-    <R.Fragment>
-      <div className="dflx_ac col_gap8 dashed_box p-8 m-b-8 m-r-8">
-        <dl className="comp_dl m-0">
-          <dd>
-            <article className="">
-              <ToolbarView marginBottom={12}>
-                {/* 글꼴 형태 Start*/}
-                {/* <ToolbarView.FontFamilySelector fontFamilyList={select.fontFamily} /> */}
-                {/* 글꼴 형태 End*/}
+    <>
+      <div className="text-editor">
+        <div className="text-editor-toolbar m-b-12">
+          <ExtractObjectButton
+            className="toolbar_btn btn_s bg_white"
+            editorViewModel={editorModel}
+            setState={setExtractState}
+            onClick={() => {
+              alert(JSON.stringify(extractState));
+            }}
+          >
+            데이터 내보내기
+          </ExtractObjectButton>
 
-                <div className="dflx_ac gap_colm8 m-b-12">
-                  <ToolbarView.EditorSizeButtonGroup editorSizeList={button.editorSize} />
-                </div>
+          {/* 사이즈 옵션 */}
+          <div className="toolbar_btn_wrapper gap_4">
+            {button.editorSize.map((size, index) => (
+              <button key={`editor_size_btn-${index}`} className="toolbar_btn btn_s bg_white">
+                {size.label}
+              </button>
+            ))}
+          </div>
+          {/* 사이즈 옵션 */}
 
-                <div className="dflx_ac gap_colm8 m-b-12">
-                  {/* 글자 정렬 - 시작 */}
-                  <ToolbarView.FontAlignButtonGroup fontAlignList={button.fontAlign} toggleBlockType={toggleBlockType} />
-                  {/* 글자 정렬 End */}
-                  {/* <ToolbarView.FontAlignSelector fontAlignList={select.} /> */}
+          {/* 글꼴 형태 Start*/}
+          {/* <ToolbarView.FontFamilySelector fontFamilyList={select.fontFamily} /> */}
+          {/* 글꼴 형태 End*/}
 
-                  {/* 글자 스타일 Start */}
-                  <ToolbarView.FontStyleButtonGroup fontStyleList={button.fontStyle} toggleInlineStyle={toggleInlineStyle} />
+          {/* 글자 정렬 - 시작 */}
+          <div className="toolbar_btn_wrapper gap_4">
+            {button.fontAlign.map((fontAlign, index) => (
+              <button
+                key={`editor_size_btn-${index}`}
+                className="toolbar_btn btn_s bg_white"
+                onClick={(e) => {
+                  if (toggleBlockType && typeof toggleBlockType === "function") {
+                    toggleBlockType(fontAlign.eventLabel);
+                  }
+                }}
+              >
+                {fontAlign.label}
+              </button>
+            ))}
+          </div>
+          {/* 글자 정렬 - 끝 */}
 
-                  {/* 글자 스타일 End */}
+          {/* 글자 스타일 - 시작 */}
+          <div className="toolbar_btn_wrapper gap_4">
+            {button.fontStyle.map((fontStyle, index) => (
+              <button
+                key={`editor_size_btn-${index}`}
+                className="toolbar_btn btn_s bg_white"
+                onClick={(e) => {
+                  if (toggleInlineStyle && typeof toggleInlineStyle === "function") {
+                    toggleInlineStyle(fontStyle.eventLabel);
+                  }
+                }}
+              >
+                {fontStyle.label}
+              </button>
+            ))}
+          </div>
+          {/* 글자 스타일 - 끝 */}
 
-                  {/* 글자 색상 Start */}
-                  <ToolbarView.FontColorButtonGroup fontColorList={button.fontColor} toggleInlineStyle={toggleInlineStyle} />
-                  <ToolbarView.FontColorSelector
-                    fontColorList={[...select.fontColors, { label: "", style: "", type: "fontColor", value: "더보기" }]}
-                    onChange={onChangeFontColor}
-                  />
-                </div>
+          {/* 글자 색상 - 시작 */}
+          <div className="toolbar_btn_wrapper gap_4">
+            {button.fontColor.map((fontColor, index) => (
+              <button
+                key={`editor_size_btn-${index}`}
+                className="toolbar_btn btn_s bg_white"
+                onClick={(e) => {
+                  if (toggleInlineStyle && typeof toggleInlineStyle === "function") {
+                    toggleInlineStyle(fontColor.eventLabel);
+                  }
+                }}
+                style={{ color: fontColor.label }}
+              >
+                {"가"}
+              </button>
+            ))}
+          </div>
+          <div className="toolbar_btn_wrapper gap_4">
+            <select className="toolbar_selector bg_white" onChange={onChangeFontColor}>
+              {[...select.fontColors, { label: "", style: "", type: "fontColor", value: "더보기" }].map((fontSize, i) => {
+                return (
+                  <option key={`font_size_selector-${i}`} value={fontSize.label}>
+                    {fontSize.value}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
+          {/* 글자 색상 - 끝 */}
 
-                {/* 글자 색상 End*/}
+          {/* 글자 사이즈 - 시작 */}
+          <div className="toolbar_btn_wrapper gap_4">
+            {button.fontSize.map((fontSize, index) => (
+              <button
+                key={`editor_size_btn-${index}`}
+                className="toolbar_btn btn_s bg_white"
+                onClick={(e) => {
+                  if (toggleInlineStyle && typeof toggleInlineStyle === "function") {
+                    toggleInlineStyle(fontSize.eventLabel);
+                  }
+                }}
+              >
+                {fontSize.label}
+              </button>
+            ))}
+          </div>
+          <div className="toolbar_btn_wrapper gap_4">
+            <select className="toolbar_selector bg_white" onChange={changeHandler.onChangeFontSize}>
+              {[...select.fontSizes, { label: "", style: "", type: "fontSize", value: "직접입력" }].map((fontSize, i) => {
+                return (
+                  <option key={`font_size_selector-${i}`} value={fontSize.label}>
+                    {fontSize.value}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
+          {/* 글자 사이즈 - 끝 */}
+        </div>
 
-                {/* 글자 사이즈 Start */}
-                <div className="dflx_ac gap_colm8 m-b-12">
-                  <ToolbarView.FontSizeButtonGroup fontSizeList={button.fontSize} toggleInlineStyle={toggleInlineStyle} />
-                  <ToolbarView.FontSizeSelector
-                    fontSizeList={[...select.fontSizes, { label: "", style: "", type: "fontSize", value: "직접입력" }]}
-                    onChange={changeHandler.onChangeFontSize}
-                  />
-                </div>
-                {/* 글자 사이즈 End */}
-              </ToolbarView>
+        {isActive && (
+          <div>
+            <span className="color-picker_wrapper" ref={colorPickerRef}>
+              <ColorPicker type="chrome" initialColor={currentColor} onColorChange={onChangeColor} onCallbackFontColor={_onCallbackFontColor} />
+            </span>
+          </div>
+        )}
 
-              {isActive && (
-                <div>
-                  <span className="color-picker_wrapper" ref={colorPickerRef}>
-                    <ColorPicker type="chrome" initialColor={currentColor} onColorChange={onChangeColor} onCallbackFontColor={_onCallbackFontColor} />
-                  </span>
-                </div>
-              )}
-              <ExtractObjectButton editorViewModel={editorModel} setState={setExtractState}>
-                데이터 추출하기
-              </ExtractObjectButton>
-
-              <div style={{ height: "300px", overflow: "auto" }}>
-                <EditorView
-                  ref={editorRef}
-                  editorState={editorState!}
-                  handleChange={onChange}
-                  handleKeyCommand={handleKeyCommand}
-                  keyBindingFn={keyBindingFn}
-                  blockStyleFn={editorModel.handleBlockStyleFn}
-                  customStyleMap={customStyleMap}
-                  placeholder={"내용을 입력해주세요......"}
-                />
-              </div>
-            </article>
-          </dd>
-        </dl>
+        <div className="text-editor-container">
+          <EditorView
+            ref={editorRef}
+            editorState={editorState!}
+            handleChange={onChange}
+            handleKeyCommand={handleKeyCommand}
+            keyBindingFn={keyBindingFn}
+            blockStyleFn={editorModel.handleBlockStyleFn}
+            customStyleMap={customStyleMap}
+            placeholder={"내용을 입력해주세요......"}
+          />
+        </div>
       </div>
-    </R.Fragment>
+    </>
   );
 }
 

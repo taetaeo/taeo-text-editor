@@ -1,0 +1,156 @@
+:root {
+  --color-navy-05: #f1f1f9;
+  --color-navy-10: #d3d5ed;
+  --color-navy-20: #a7abda;
+  --color-navy-30: #7b82c8;
+  --color-navy-40: #4f58b5;
+  --color-navy-50: #232ea3;
+  --color-navy-60: #1c2582;
+  --color-navy-70: #151c62;
+  --color-navy-80: #0e1241;
+  --color-navy-90: #070921;
+
+  --color-blue-05: #f0f3ff;
+  --color-blue-10: #d2dcfe;
+  --color-blue-20: #a4b8fe;
+  --color-blue-30: #7795fd;
+  --color-blue-40: #4971fd;
+  --color-blue-50: #1c4efc;
+  --color-blue-60: #163eca;
+  --color-blue-70: #112f97;
+  --color-blue-80: #0b1f65;
+  --color-blue-90: #061032;
+
+  --color-royalBlue-05: #ebf5ff;
+  --color-royalBlue-10: #c7e3ef;
+  --color-royalBlue-20: #8fc8ff;
+  --color-royalBlue-30: #56acff;
+  --color-royalBlue-40: #1e90ef;
+  --color-royalBlue-50: #0074e5;
+  --color-royalBlue-60: #0056aa;
+  --color-royalBlue-70: #00407f;
+  --color-royalBlue-80: #002b55;
+  --color-royalBlue-90: #00152a;
+
+  --color-skyBlue-05: #f0fbff;
+  --color-skyBlue-10: #d4f3fe;
+  --color-skyBlue-20: #a9e6fc;
+  --color-skyBlue-30: #7dd4fb;
+  --color-skyBlue-40: #52cdf9;
+  --color-skyBlue-50: #27c1f8;
+  --color-skyBlue-60: #1f9ac6;
+  --color-skyBlue-70: #177495;
+  --color-skyBlue-80: #104d63;
+  --color-skyBlue-90: #082732;
+
+  --color-aqua-05: #e7fdfd;
+  --color-aqua-10: #cefbfb;
+  --color-aqua-20: #9df6f6;
+  --color-aqua-30: #6df2f2;
+  --color-aqua-40: #3beded;
+  --color-aqua-50: #15dfdf;
+  --color-aqua-60: #03c4c4;
+  --color-aqua-70: #078c8c;
+  --color-aqua-80: #045d5d;
+  --color-aqua-90: #022f2f;
+
+  --color-teal-05: #edf8f8;
+  --color-teal-10: #ceebeb;
+  --color-teal-20: #9dd7d7;
+  --color-teal-30: #6dc3c3;
+  --color-teal-40: #3cafaf;
+  --color-teal-50: #0b9b9b;
+  --color-teal-60: #097c7c;
+  --color-teal-70: #075d5d;
+  --color-teal-80: #043e3e;
+  --color-teal-90: #021f1f;
+
+  --color-green-05: #eef7ee;
+  --color-green-10: #cce6cc;
+  --color-green-20: #99cc99;
+  --color-green-30: #66b366;
+  --color-green-40: #339933;
+  --color-green-50: #008000;
+  --color-green-60: #006600;
+  --color-green-70: #004d00;
+  --color-green-80: #003300;
+  --color-green-90: #001a00;
+
+  --color-limeGreen-05: #f3fcf3;
+  --color-limeGreen-10: #d6f5d6;
+  --color-limeGreen-20: #adebad;
+  --color-limeGreen-30: #84e184;
+  --color-limeGreen-40: #5bd75b;
+  --color-limeGreen-50: #32cd32;
+  --color-limeGreen-60: #1fad1f;
+  --color-limeGreen-70: #1e7b1e;
+  --color-limeGreen-80: #145214;
+  --color-limeGreen-90: #0a290a;
+
+  --color-lime-05: #e7ffea;
+  --color-lime-10: #eefed6;
+  --color-lime-20: #deffab;
+  --color-lime-30: #cefe83;
+  --color-lime-40: #bcf95d;
+  --color-lime-50: #a1f524;
+  --color-lime-60: #8edd13;
+  --color-lime-70: #699b1c;
+  --color-lime-80: #476912;
+  --color-lime-90: #253709;
+
+  --color-olive-05: #f8f8ed;
+  --color-olive-10: #ebebcc;
+  --color-olive-20: #d6d699;
+  --color-olive-30: #c2c266;
+  --color-olive-40: #adad33;
+  --color-olive-50: #999900;
+  --color-olive-60: #7a7a00;
+  --color-olive-70: #5c5c00;
+  --color-olive-80: #3d3d00;
+  --color-olive-90: #1f1f00;
+
+  --color-yellow-05: #fffbe5;
+  --color-yellow-10: #fff6cc;
+  --color-yellow-20: #ffee99;
+  --color-yellow-30: #ffe566;
+  --color-yellow-40: #ffdd33;
+  --color-yellow-50: #ffd400;
+  --color-yellow-60: #d6ab00;
+  --color-yellow-70: #a38500;
+  --color-yellow-80: #6b5700;
+  --color-yellow-90: #332a00;
+
+  --color-gold-05: #fdf7e9;
+  --color-gold-10: #faefd3;
+  --color-gold-20: #f5dfa7;
+  --color-gold-30: #f1cf7a;
+  --color-gold-40: #ecbf4e;
+  --color-gold-50: #e7af22;
+  --color-gold-60: #c8941b;
+  --color-gold-70: #8b6914;
+  --color-gold-80: #5c460e;
+  --color-gold-90: #2e2307;
+
+  /* 흰색 */
+  --color-white-05: #ffffff;
+  --color-white-10: #fafafa;
+  --color-white-20: #f5f5f5;
+  --color-white-30: #f0f0f0;
+  --color-white-40: #ededed;
+  --color-white-50: #e0e0e0;
+  --color-white-60: #d0d0d0;
+  --color-white-70: #bfbfbf;
+  --color-white-80: #a6a6a6;
+  --color-white-90: #8c8c8c;
+
+  --color-black-05: #f5f5f5;
+  --color-black-10: #e0e0e0;
+  --color-black-20: #b3b3b3;
+  --color-black-30: #808080;
+  --color-black-40: #4d4d4d;
+  --color-black-50: #262626;
+  --color-black-60: #1a1a1a;
+  --color-black-70: #0d0d0d;
+  --color-black-80: #050505;
+  --color-black-90: #000000;
+}

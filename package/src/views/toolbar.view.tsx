@@ -11,28 +11,27 @@ import {
   FontSizeSelector,
   FontStyleButtonGroup,
 } from "../components";
-import { cn } from "../lib";
 
-export interface ToolbarViewProps extends R.HTMLAttributes<HTMLElement> {
-  marginBottom: number;
-}
+export interface ToolbarViewProps extends R.HTMLAttributes<HTMLElement>, R.PropsWithChildren {}
 
-const ToolbarContainer: React.FC<React.PropsWithChildren<ToolbarViewProps>> = ({ className = "", marginBottom = 12, children, style, ...rest }) => {
+const ToolbarContainer = <T extends HTMLDivElement>(
+  { className, children, style, ...rest }: ToolbarViewProps,
+
+  forwardedRef: R.ForwardedRef<T>
+) => {
   return (
-    <div className={cn(className, { [`m-b-${marginBottom}`]: true })} style={style} {...rest}>
+    <div ref={forwardedRef} className={`text-editor-toolbar ${className}`} style={style} {...rest}>
       {children}
     </div>
   );
 };
 
-const ToolbarView = Object.assign(ToolbarContainer, {
+const ToolbarView = Object.assign(R.forwardRef(ToolbarContainer), {
   EditorSizeButtonGroup,
-
   FontAlignButtonGroup,
   FontColorButtonGroup,
   FontSizeButtonGroup,
   FontStyleButtonGroup,
-
   FontSizeSelector,
   FontColorSelector,
   FontAlignSelector,

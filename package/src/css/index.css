@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 @import "https://cdn.jsdelivr.net/npm/editorjs-text-color-plugin@latest/dist/text-color-plugin.css";
-@import "./editor.css";
-/* @import "./tooblar.css"; */
-/* @import "./widget.css"; */
+@import "./text-editor-base.css";
+@import "./text-editor-helper.css";
+@import "./text-editor.css";
+@import "./widget.css";
