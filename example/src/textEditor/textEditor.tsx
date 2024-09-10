@@ -1,8 +1,8 @@
-import type { CustomStyleMapType, UseEditorProps } from "text-editor";
-import { EditorView, useEditor, styledMap, toolbarConfigs, ExtractObjectButton, useColorPicker, ColorPicker, FontFamilySelector } from "text-editor";
+import type { CustomStyleMapType, UseEditorProps } from "taeo-text-editor";
+import { EditorView, useEditor, styledMap, toolbarConfigs, ExtractObjectButton, useColorPicker, ColorPicker } from "taeo-text-editor";
 import * as R from "react";
 
-import "text-editor/dist/css/text-editor.css";
+import "taeo-text-editor/dist/css/text-editor.css";
 import TextEditorPrev from "./textEditorPrev";
 
 const { select, button } = toolbarConfigs;

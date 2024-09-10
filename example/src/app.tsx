@@ -1,5 +1,5 @@
 import * as React from "react";
-import { EditorModel } from "text-editor";
+import { EditorModel } from "taeo-text-editor";
 
 import TextEditor from "./textEditor/textEditor";
 
