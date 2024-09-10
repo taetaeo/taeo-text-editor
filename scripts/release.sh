@@ -18,7 +18,7 @@ new_version=$(npm version --no-git-tag-version patch | sed 's/^v//')
 echo "새 버전: $new_version"
 
 # 프로젝트 빌드
-npm run build
+npx rollup -c
 
 # 변경 사항 커밋
 git add .
