@@ -4,7 +4,7 @@ set -e
 
 echo "패키지 설치 시작"
 
-# _text-editor/package 디렉토리로 이동
+# package 디렉토리로 이동
 cd package || { echo "text-ediotr package 디렉토리 이동 실패"; exit 1; }
 
 echo "현재 경로: $(pwd)"

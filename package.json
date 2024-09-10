@@ -16,6 +16,7 @@
     "prepare": "sh ./scripts/prepare.sh",
     "after": "sh ./scripts/after.sh",
     "start": "npm run prepare && npm run after",
-    "dev": "sh ./scripts/dev.sh"
+    "dev": "sh ./scripts/dev.sh",
+    "release": "sh ./scripts/release.sh"
   }
 }
