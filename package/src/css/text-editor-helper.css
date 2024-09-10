@@ -146,28 +146,28 @@
 }
 
 .bg_navy {
-  background-color: var(--color-navy-50);
+  background-color: var(--color-navy-50) !important;
   color: var(--color-white-50);
 }
 
 .bg_royalblue {
-  background-color: var(--color-royalBlue-50);
+  background-color: var(--color-royalBlue-50) !important;
   color: var(--color-white-50);
 }
 .bg_blue {
-  background-color: var(--color-blue-50);
+  background-color: var(--color-blue-50) !important;
   color: var(--color-white-50);
 }
 .bg_skyblue {
-  background-color: var(--color-skyBlue-50);
+  background-color: var(--color-skyBlue-50) !important;
   color: var(--color-white-50);
 }
 .bg_white {
-  background-color: var(--color-white-50);
+  background-color: var(--color-white-50) !important;
   color: var(--color-black-50);
 }
 .bg_black {
-  background-color: var(--color-black-50);
+  background-color: var(--color-black-50) !important;
   color: var(--color-white-50);
 }
 

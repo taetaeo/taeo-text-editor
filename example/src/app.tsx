@@ -1,15 +1,11 @@
-import * as R from "react";
+import * as React from "react";
 import { EditorState } from "draft-js";
-import TextEditor from "./textEditor";
+import TextEditor from "./textEditor/textEditor";
 
 function App() {
-  const [editorState, setEditorState] = R.useState(() => EditorState.createEmpty());
+  const [editorState, setEditorState] = React.useState(() => EditorState.createEmpty());
 
-  return (
-    <R.Fragment>
-      <TextEditor editorState={editorState} setEditorState={setEditorState} />
-    </R.Fragment>
-  );
+  return <TextEditor editorState={editorState} setEditorState={setEditorState} />;
 }
 
 export default App;

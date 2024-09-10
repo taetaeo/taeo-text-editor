@@ -3,6 +3,7 @@ import { EditorView, useEditor, styledMap, toolbarConfigs, ExtractObjectButton, 
 import * as R from "react";
 
 import "text-editor/dist/css/text-editor.css";
+import TextEditorPrev from "./textEditorPrev";
 
 const { select, button } = toolbarConfigs;
 
@@ -12,7 +13,18 @@ function TextEditor(props: UseEditorProps) {
   const [extractState, setExtractState] = R.useState({});
   const [customStyleMap, setCustomStyleMap] = R.useState<CustomStyleMapType>(() => styledMap(styleMapList));
 
-  const { editorRef, editorState, editorModel, onChange, toggleBlockType, toggleInlineStyle, handleKeyCommand, keyBindingFn, changeHandler } = useEditor({
+  const {
+    editorRef,
+    editorState,
+    editorModel,
+
+    onChange,
+    toggleBlockType,
+    toggleInlineStyle,
+    handleKeyCommand,
+    keyBindingFn,
+    changeHandler,
+  } = useEditor({
     ...props,
   });
   const { ref: colorPickerRef, currentColor, onChangeColor, isActive, toggle, onActive, onInactive } = useColorPicker({ initialColor: "#ffffff" });
@@ -166,17 +178,23 @@ function TextEditor(props: UseEditorProps) {
           </div>
         )}
 
-        <div className="text-editor-container">
-          <EditorView
-            ref={editorRef}
-            editorState={editorState!}
-            handleChange={onChange}
-            handleKeyCommand={handleKeyCommand}
-            keyBindingFn={keyBindingFn}
-            blockStyleFn={editorModel.handleBlockStyleFn}
-            customStyleMap={customStyleMap}
-            placeholder={"내용을 입력해주세요......"}
-          />
+        <div className="gap_8 p-8" style={{ display: "flex", flex: 1 }}>
+          <div className="text-editor-container p-8">
+            <EditorView
+              ref={editorRef}
+              editorState={editorState!}
+              handleChange={onChange}
+              handleKeyCommand={handleKeyCommand}
+              keyBindingFn={keyBindingFn}
+              blockStyleFn={editorModel.handleBlockStyleFn}
+              customStyleMap={customStyleMap}
+              placeholder={"내용을 입력해주세요......"}
+            />
+          </div>
+          <div style={{ width: "1px", height: "100%", background: "black" }}></div>
+          <div className="prev_wrap w-100 p-8" style={{ position: "relative", background: "#fff" }}>
+            <TextEditorPrev className="custom_line_border" previewList={extractState} style={{ position: "absolute" }} width={1200} height={200} />
+          </div>
         </div>
       </div>
     </>
