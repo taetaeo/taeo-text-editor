@@ -1,6 +1,6 @@
 {
   "name": "taeo-text-editor",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "this package is text editor based on draft.js",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://git.uinetworks.kr/IntelligentSolutionTeam/text-editor.git"
+    "url": "https://github.com/taetaeo/taeo-text-editor.git"
   },
   "keywords": [
     "text",
