@@ -11,7 +11,7 @@ interface EditorModelState {
 }
 
 class EditorModel {
-  private _state: EditorModelState;
+  _state: EditorModelState;
   private _helper: ModelHelper;
 
   constructor() {
@@ -73,7 +73,6 @@ class EditorModel {
    */
 
   onToggleInlineStyle(inlineStyle: DraftInlineStyle | string) {
-    console.log("inlineStyle", inlineStyle);
     return (this.editorState = RichUtils.toggleInlineStyle(this._state.editorState, inlineStyle as unknown as string));
   }
 
