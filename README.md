@@ -6,7 +6,8 @@
 
 ## Links
 
-- [package](https://www.npmjs.com/package/taeo-text-editor?activeTab=readme)
+- [NPM](https://www.npmjs.com/package/taeo-text-editor?activeTab=readme)
+- [DEMO](https://taeo-text-editor.vercel.app/)
 
 ## Getting Started
 
