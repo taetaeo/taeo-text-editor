@@ -1,9 +1,12 @@
 import * as React from "react";
-import { EditorState } from "draft-js";
+import { EditorModel } from "text-editor";
+
 import TextEditor from "./textEditor/textEditor";
 
+const editorModel = new EditorModel();
+
 function App() {
-  const [editorState, setEditorState] = React.useState(() => EditorState.createEmpty());
+  const [editorState, setEditorState] = React.useState(editorModel._state.editorState);
 
   return <TextEditor editorState={editorState} setEditorState={setEditorState} />;
 }

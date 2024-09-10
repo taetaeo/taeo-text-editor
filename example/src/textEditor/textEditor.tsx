@@ -1,5 +1,5 @@
 import type { CustomStyleMapType, UseEditorProps } from "text-editor";
-import { EditorView, useEditor, styledMap, toolbarConfigs, ExtractObjectButton, useColorPicker, ColorPicker } from "text-editor";
+import { EditorView, useEditor, styledMap, toolbarConfigs, ExtractObjectButton, useColorPicker, ColorPicker, FontFamilySelector } from "text-editor";
 import * as R from "react";
 
 import "text-editor/dist/css/text-editor.css";
@@ -47,31 +47,31 @@ function TextEditor(props: UseEditorProps) {
 
   return (
     <>
-      <div className="text-editor">
+      <div className="text-editor gap_16">
         <div className="text-editor-toolbar m-b-12">
-          <ExtractObjectButton
-            className="toolbar_btn btn_s bg_white"
-            editorViewModel={editorModel}
-            setState={setExtractState}
-            onClick={() => {
-              alert(JSON.stringify(extractState));
-            }}
-          >
-            데이터 내보내기
-          </ExtractObjectButton>
-
           {/* 사이즈 옵션 */}
-          <div className="toolbar_btn_wrapper gap_4">
+          {/* <div className="toolbar_btn_wrapper gap_4">
             {button.editorSize.map((size, index) => (
               <button key={`editor_size_btn-${index}`} className="toolbar_btn btn_s bg_white">
                 {size.label}
               </button>
             ))}
-          </div>
+          </div> */}
           {/* 사이즈 옵션 */}
 
           {/* 글꼴 형태 Start*/}
-          {/* <ToolbarView.FontFamilySelector fontFamilyList={select.fontFamily} /> */}
+          <div className="toolbar_btn_wrapper gap_4">
+            <select className="toolbar_selector bg_white" onChange={changeHandler.onChangeFontSize}>
+              {select.fontFamilies.map((fontFamily, i) => {
+                return (
+                  <option key={`font_size_selector-${i}`} value={fontFamily.label}>
+                    {fontFamily.style}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
+
           {/* 글꼴 형태 End*/}
 
           {/* 글자 정렬 - 시작 */}
@@ -168,6 +168,17 @@ function TextEditor(props: UseEditorProps) {
             </select>
           </div>
           {/* 글자 사이즈 - 끝 */}
+
+          <ExtractObjectButton
+            className="toolbar_btn btn_s bg_white"
+            editorViewModel={editorModel}
+            setState={setExtractState}
+            onClick={() => {
+              alert(JSON.stringify(extractState));
+            }}
+          >
+            미리보기
+          </ExtractObjectButton>
         </div>
 
         {isActive && (
@@ -191,9 +202,9 @@ function TextEditor(props: UseEditorProps) {
               placeholder={"내용을 입력해주세요......"}
             />
           </div>
-          <div style={{ width: "1px", height: "100%", background: "black" }}></div>
-          <div className="prev_wrap w-100 p-8" style={{ position: "relative", background: "#fff" }}>
-            <TextEditorPrev className="custom_line_border" previewList={extractState} style={{ position: "absolute" }} width={1200} height={200} />
+          <div className="text-editor-divider bg_black" />
+          <div className="text-prev_wrap w-100 p-8 bg_white">
+            <TextEditorPrev previewList={extractState} width={1200} height={200} />
           </div>
         </div>
       </div>

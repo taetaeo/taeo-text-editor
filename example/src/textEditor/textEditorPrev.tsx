@@ -90,11 +90,11 @@ const TextEditorPrev = ({ className, width, height, previewList, style, ...rest 
     updateMinimap(previewList);
 
     return () => {
-      // previewCanvasModel.clear();
+      previewCanvasModel.dispose();
     };
   }, [width, height, previewList]);
 
-  return <canvas id="textEditor-canvas2" className={className} ref={canvasRef!} style={style} {...rest} />;
+  return <canvas id="text-editor-canvas" className={className} ref={canvasRef!} style={style} {...rest} />;
 };
 
 export default TextEditorPrev;
