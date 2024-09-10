@@ -4,6 +4,10 @@
 ![React.js](https://img.shields.io/badge/React.js-v18.2.0-61DAFB?logo=react&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-v5.2.2-007ACC?logo=typescript&logoColor=white)
 
+## Links
+
+- [package](https://www.npmjs.com/package/taeo-text-editor?activeTab=readme)
+
 ## Getting Started
 
 ```bash
